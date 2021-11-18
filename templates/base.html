@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta charset="utf-8">
+    <title>mattmemme</title>
+    <link rel="stylesheet" href="/css/custom.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body style="height: 100%">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="../static/bug.svg" alt="" width="30" height="24">
+      <a class="navbar-brand" href="{{url_for('index')}}">Matthew Memme</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
