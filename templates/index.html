@@ -1,33 +1,63 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card">
-        <img src="../static/intel_logo.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+  <div class="container">
+
+    <div class="card mb-3">
+      <div class="row g-0 align-items-center">
+        <div class="col-sm-2">
+          <img src="/static/intel_img.png" class="img-fluid" alt="...">
+        </div>
+        <div class="col-md-10">
+          <div class="card-body">
+            <p class="company-title">Intel Corporation, Vancouver, British Columbia</p>
+            <p class="position-title">Junior ASIC Verification Engineer</p>
+            <ul class="card-text">
+              <li class="card-list-item">Developed a static analysis script in Python to validate YAML files before merging. Used the Cerberus framework to validate each file against a custom schema, and the unittest framework for testing</li>
+              <li class="card-list-item">Developing a Python script to report weekly build summaries using the TeamCity RESTful API</li>
+              <li class="card-list-item">Debugged and provided fixes for 3 failing seeds in the NVMe Datapath Cluster Subsystem’s UVM environment</li>
+              <li class="card-list-item">Owned SoC Sub-System’s continuous integration management script. Added 8 new features and 5 enhancements to the existing Python script which controls all the builds in the TeamCity management platform</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card">
-        <img src="../static/ubc_logo.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+    <div class="card mb-3">
+      <div class="row g-0 align-items-center">
+        <div class="col-sm-2">
+          <img src="/static/ubc_img.png" class="img-fluid" alt="...">
+        </div>
+        <div class="col-md-10">
+          <div class="card-body">
+            <p class="company-title">The University of British Columbia, Vancouver, British Columbia</p>
+            <p class="position-title">CPEN 221 Teaching Assistant – Software Construction</p>
+            <ul class="card-text">
+              <li class="card-list-item">Further developed technical communication skills by conveying theoretical and applied information to second year Computer Engineering students while hosting 2 optional office hours every week for 10 weeks</li>
+              <li class="card-list-item">Marked student projects written in Java, and provided constructive feedback for student improvement</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card">
-        <img src="../static/mountainview_logo.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+
+    <div class="card mb-3">
+      <div class="row g-0 align-items-center">
+        <div class="col-sm-2">
+          <img src="/static/mountainview_img.jpg" class="img-fluid" alt="...">
+        </div>
+        <div class="col-md-10">
+          <div class="card-body">
+            <p class="company-title">Mountainview Build Group, Niagara, Ontario</p>
+            <p class="position-title">Operations Software Developer</p>
+            <ul class="card-text">
+              <li class="card-list-item">Integrated a RESTful API into a Filemaker database using Postman. Streamlined the ability to sync 2 surveys to the database with approximately 75 varying name/value pairs for about 250 customers per year</li>
+              <li class="card-list-item">Designed a front-end mobile application in Filemaker to connect the company database to remote users</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+
+  </div>  
   
 {% endblock %}

@@ -1,0 +1,18 @@
+.company-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.position-title {
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.card-list-item {
+  font-size: 14px;
+}
+
