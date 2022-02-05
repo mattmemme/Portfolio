@@ -1,33 +1,37 @@
 # Set up your imports and your flask app.
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, url_for
+from flask_wtf import FlaskForm
+from wtforms import TextField, SubmitField
+from wtforms.fields.core import FieldList, FormField
+
 app = Flask(__name__)
 
-@app.route('/')
+app.config['SECRET_KEY'] = 'HelloWorld'
+
+class HistoryEntryForm(FlaskForm):
+    cmd = TextField()
+    rsp = TextField()
+
+class TermForm(FlaskForm):
+    history = FieldList(FormField(HistoryEntryForm))
+    lst_cmd = TextField()
+    submit = SubmitField('Submit')
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
+
+    form = TermForm()
+
+    if form.lst_cmd.data:
+        print('validated')
+        entry = {'cmd': form.lst_cmd.data}
+        entry.update({'rsp': form.lst_cmd.data})
+        form.history.append_entry(entry)
+        form.lst_cmd.data = ''
+        return render_template('index.html', form=form)
+
     # This home page should have the form.
-    return render_template('index.html')
-
-
-# This page will be the page after the form
-@app.route('/report')
-def report():
-    # Check the user name for the 3 requirements.
-    has_low = False
-    has_upp = False
-    num_end = False
-
-    username = request.args.get('username')
-
-    has_low = any(c.islower() for c in username)
-    has_upp = any(c.isupper() for c in username)
-    num_end = username[-1].isdigit()
-
-    report = has_low and has_upp and num_end
-
-    return render_template('report.html',report=report,has_low=has_low,has_upp=has_upp,num_end=num_end)
-
-    # Return the information to the report page html.
-    pass
+    return render_template('index.html', form=form)
 
 if __name__ == '__main__':
     app.run(debug=True)

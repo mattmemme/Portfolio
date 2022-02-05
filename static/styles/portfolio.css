@@ -16,3 +16,33 @@
   font-size: 14px;
 }
 
+.div-term {
+  position: relative;
+}
+
+.form-term {
+  position: absolute;
+  top: 32px;
+  left: 25px;
+  color: white;
+}
+
+.command-line {
+  color: white;
+  background: none;
+  border: none;
+}
+
+.command-line:focus {
+  outline: none;
+}
+
+.header-container {
+  text-align: center;
+  padding: 25px;
+}
+
+.header-text {
+  color: grey;
+  margin: 0px;
+}
