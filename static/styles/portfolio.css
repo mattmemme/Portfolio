@@ -25,6 +25,12 @@
   top: 32px;
   left: 25px;
   color: white;
+  overflow-y: auto;
+  height: 90%;
+}
+
+.invisible {
+  opacity: 0.0;
 }
 
 .command-line {

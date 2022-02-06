@@ -8,14 +8,17 @@
 
   <div class="col-sm-6 offset-sm-3 div-term">
     <img src="/static/term_window.png" class="img-fluid">
-    <form method="post" action="{{url_for('index', form=form)}}" class="form-term">
+    <form method="POST" class="form-term">
       {{form.hidden_tag()}}
+
       {% for entry in form.history %}
-        (base) matthew % {{entry.form.cmd(class="command-line")}}<br>
-        {{entry.form.rsp(class="command-line")}}<br>
+        {{ entry.hidden_tag() }}
+        {{ entry.cmd.label }} {{ entry.cmd(class="command-line") }}<br>
+        {{ entry.rsp(class="command-line") }}<br>
       {% endfor %}
-      (base) matthew % {{form.lst_cmd(class="command-line")}}
-      <input type="submit" name="submit">
+
+      {{ form.lst_cmd.label }} {{ form.lst_cmd(class="command-line") }}<br>
+      <input type="submit" name="submit" class="invisible">
     </form>
 
   </div>

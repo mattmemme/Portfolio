@@ -9,26 +9,24 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'HelloWorld'
 
 class HistoryEntryForm(FlaskForm):
-    cmd = TextField()
+    cmd = TextField('(base) matthew %')
     rsp = TextField()
 
 class TermForm(FlaskForm):
     history = FieldList(FormField(HistoryEntryForm))
-    lst_cmd = TextField()
-    submit = SubmitField('Submit')
+    lst_cmd = TextField('(base) matthew %', render_kw={'autofocus': True})
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
     form = TermForm()
 
-    if form.lst_cmd.data:
-        print('validated')
-        entry = {'cmd': form.lst_cmd.data}
-        entry.update({'rsp': form.lst_cmd.data})
-        form.history.append_entry(entry)
-        form.lst_cmd.data = ''
-        return render_template('index.html', form=form)
+    if form.validate_on_submit():
+      history_form = HistoryEntryForm()
+      history_form.cmd = form.lst_cmd.data
+      history_form.rsp = '0'
+      form.history.append_entry(history_form)
+      form.lst_cmd.data = ''
 
     # This home page should have the form.
     return render_template('index.html', form=form)
