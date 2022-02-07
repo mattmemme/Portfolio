@@ -12,21 +12,14 @@
   padding: 0;
 }
 
-.card-list-item {
-  font-size: 14px;
-}
-
-.div-term {
-  position: relative;
-}
-
 .form-term {
   position: absolute;
-  top: 32px;
-  left: 25px;
+  top: 6%;
+  left: 2%;
   color: white;
   overflow-y: auto;
   height: 90%;
+  width: 96%;
 }
 
 .invisible {
